@@ -62,7 +62,6 @@ export default {
 
     setInterval(function () {
       this.getAPI()
-      console.log('refreshed')
     }.bind(this), 15000);
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <li v-if="checkTag()">
+  <li class="insta-item" v-if="checkTag()">
     <img :src="data.images.thumbnail.url" />
   </li>
 </template>

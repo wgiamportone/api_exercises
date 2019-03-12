@@ -1,5 +1,5 @@
 <template>
-  <div class="InstaFeed">
+  <div class="insta-feed">
     <h1>{{ full_name }}</h1>
     <h2><a :href="`${user_link}`" target="_blank">@{{ username }}</a></h2>
     <br><br>

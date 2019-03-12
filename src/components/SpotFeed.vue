@@ -1,5 +1,5 @@
 <template>
-  <div class="SpotFeed">
+  <div class="spot-feed">
     <span v-if="is_playing">
       Currenty playing:
     </span>
@@ -9,7 +9,7 @@
     <br>
     {{ track_name }}
     by
-    <a :href="`${track_link}`" target="_blank">
+    <a :href="track_link" target="_blank">
       {{ artist_name }}
     </a>
   </div>
@@ -20,14 +20,13 @@ import axios from 'axios'
 
 export default {
   name: 'SpotFeed',
-
   data () {
     return {
-      oauth_token: 'BQDmrqTPVZnX36gll-BetXJN-9rtv4cEkIUOia2aM5kHo3efq6APCath13HyaGD--Rj1GXp6X5Y0NGQSDrWxHzY3B5AN1-spnUMXCPv68Hm7XcBOO8bII1EfBryrAHob8G0QMLcJgF4TYQSU6IzsGmsvi7uvpC0',
+      oauth_token: 'BQCV1hYvVQSniKDs5XmNiBd8EE5ieYn3R_fWULtC__-RhzGF9CxmkedoZaWAxakwMcW1w6csUDqCax04cNFXm9Y9JdtpDWhKT4FHbqwduJP2dac-ipUeKF2EDs0FUgzI91uGaxSSM8NsHNpVoNimmSBO1NRD4Lo',
       url: 'https://api.spotify.com/v1/me',
       end_point: '/player',
       is_playing: '',
-      artist_name:'',
+      artist_name: '',
       track_link: '',
       track_name: '',
       error: false
@@ -47,37 +46,34 @@ export default {
         .then(response => {
           this.player = response.data
           this.track = this.player.item
-
           this.is_playing = this.player.is_playing
           this.artist_name = this.track.artists[0].name
           this.track_link = this.track.artists[0].external_urls.spotify
           this.track_name = this.track.name
-
-          console.log(this.player)
         })
     }
   },
   mounted () {
     this.getAPI()
-
-    setInterval(function () {
-      this.getAPI()
-    }.bind(this), 15000);
+    // Removing temporarily
+    //setInterval(function () {
+      //this.getAPI()
+    //}.bind(this), 30000);
   }
 }
 </script>
 
 <style scoped>
-.SpotFeed {
-  background: black;
-  color: white;
-  padding: 1em;
-  position: fixed;
-  right: 1em;
-  top: 1em;
-}
+  .spot-feed {
+    background: black;
+    color: white;
+    padding: 1em;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+  }
 
-a {
-  color: white;
-}
+  a {
+    color: white;
+  }
 </style>

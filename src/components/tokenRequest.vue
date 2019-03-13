@@ -1,0 +1,1 @@
+https://accounts.spotify.com/authorize?client_id=79f1ec5bf3904671b6b0a920a81961c8&redirect_uri=http:%2F%2Flocalhost:8080%2Fcallback&scope=user-read-recently-played%20user-read-playback-state%20user-modify-playback-state%20user-read-currently-playing%20app-remote-control%20streaming&response_type=token&state=683920

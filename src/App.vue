@@ -20,6 +20,6 @@ export default {
 
 <style>
 body {
-  font: 1em/1.25 "Helvetica"
+  font: 1em/1.5 "Helvetica"
 }
 </style>
